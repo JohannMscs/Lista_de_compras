@@ -20,29 +20,26 @@ itemPrice.innerText = `R$ ${price.value}`
 const itemName = document.createElement('p')
 itemName.innerText = name.value
 
+const itemDelete = document.createElement('button')
+itemDelete.innerHTML = "Excluir"
+
 itemPrice.style.marginLeft= '5px'
 
-
-
-console.log(price.value)
 
 let subPrice = Number(price.value)
 
 itens.push({
     valor: subPrice
 })
-console.log(valor)
 let soma = 0
 itens.map(function(val){
     soma +=parseFloat(val.valor)
     
 })
 
-console.log(subPrice)
-console.log(itens)
-
 cart.appendChild(itemName)
 cart.appendChild(itemPrice)
+cart.appendChild(itemDelete)
 
 list.appendChild(cart)
 
@@ -55,11 +52,13 @@ result.innerHTML = ''
 result.innerHTML += `R$ ${soma.toFixed(2)}`
 
 
+itemDelete.addEventListener('click', deleteItem)
 
-
+function deleteItem(e){
+    e.target.parentElement.remove()
+    console.log(subPrice)
+}
 
 
 
 }
-
-
