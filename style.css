@@ -33,9 +33,10 @@ input{
     border-radius: 10px;
 }
 .box_product{
-    text-align: center;
     width: 180px;
     height: 20px;
+    text-align: center;
+
 }
 #add{
     height: 26px;
@@ -48,6 +49,12 @@ input{
     justify-content: center;
     
 
+}
+.itemDelete{
+
+    border: solid black 2px;
+    border-radius: 10px;
+    
 }
 p{  
 color: #141414;
@@ -71,3 +78,4 @@ margin: 3px;
     color: #ffff;
     
 }
+

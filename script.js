@@ -29,6 +29,7 @@ itemPrice.style.marginLeft= '5px'
 let subPrice = Number(price.value)
 
 itens.push({
+    id: 0,
     valor: subPrice
 })
 let soma = 0
@@ -53,12 +54,34 @@ result.innerHTML += `R$ ${soma.toFixed(2)}`
 
 
 itemDelete.addEventListener('click', deleteItem)
-
 function deleteItem(e){
     e.target.parentElement.remove()
+
     console.log(subPrice)
+
+    function remove(itens, e, subPrice){
+        return itens.filter(function(i) {
+            return i[e] !== subPrice
+        })
+    }
+    itens = remove(itens, "valor", subPrice)
+
+    console.log(itens)
+
+    let soma = 0
+itens.map(function(val){
+    soma +=parseFloat(val.valor)
+    
+})
+
+console.log(soma)
+
+result.innerHTML = `R$ ${soma.toFixed(2)}`
+
+
+}
 }
 
 
 
-}
+
