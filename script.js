@@ -22,7 +22,7 @@ itemName.innerText = name.value
 
 const itemDelete = document.createElement('button')
 itemDelete.innerHTML = "Excluir"
-
+itemDelete.classList.add('itemDelete')
 itemPrice.style.marginLeft= '5px'
 
 
@@ -57,8 +57,6 @@ itemDelete.addEventListener('click', deleteItem)
 function deleteItem(e){
     e.target.parentElement.remove()
 
-    console.log(subPrice)
-
     function remove(itens, e, subPrice){
         return itens.filter(function(i) {
             return i[e] !== subPrice
@@ -66,15 +64,11 @@ function deleteItem(e){
     }
     itens = remove(itens, "valor", subPrice)
 
-    console.log(itens)
-
     let soma = 0
 itens.map(function(val){
     soma +=parseFloat(val.valor)
     
 })
-
-console.log(soma)
 
 result.innerHTML = `R$ ${soma.toFixed(2)}`
 
